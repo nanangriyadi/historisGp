@@ -3,37 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah, Update & Delete Histori Pelatihan Guru Penggerak</title>
+    <title>Update & Delete Histori Pelatihan</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
 
-    <header class="bg-blue-600 text-white p-4 text-center md:flex md:justify-between md:items-center">
-        <h1 class="text-2xl font-semibold">Tambah, Update & Delete Histori Pelatihan Guru Penggerak</h1>
+    <header class="bg-blue-600 text-white p-4 text-center">
+        <h1 class="text-2xl font-semibold">Update & Delete Histori Pelatihan Guru Penggerak</h1>
     </header>
 
     <main class="container mx-auto p-6 lg:p-8">
-        <section id="tambah-update-delete">
-            <h2 class="text-xl font-bold mb-4">Tambah, Update dan Hapus Data Pelatihan</h2>
+        <section id="update-delete">
+            <h2 class="text-xl font-bold mb-4">Form Update & Delete Pelatihan</h2>
             
-            <form id="form-update" class="bg-white p-6 rounded-lg shadow-md mb-8">
-                <label for="tahun" class="block text-sm font-medium text-gray-700">Tahun</label>
-                <input type="number" id="tahun" class="block w-full bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm" required>
-
-                <label for="nama" class="block text-sm font-medium text-gray-700">Nama Pelatihan</label>
-                <input type="text" id="nama" class="block w-full bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm" required>
-
-                <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal</label>
-                <input type="date" id="tanggal" class="block w-full bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm" required>
-
-                <label for="foto" class="block text-sm font-medium text-gray-700">Foto (URL)</label>
-                <input type="url" id="foto" class="block w-full bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm" placeholder="Masukkan URL Foto" required>
-
-                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md">Tambah Data Pelatihan</button>
-            </form>
+            <!-- Dropdown untuk memilih tahun -->
+            <label for="tahun-select" class="block text-sm font-medium text-gray-700 mb-2">Pilih Tahun</label>
+            <select id="tahun-select" class="block w-1/4 bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm">
+                <!-- Dropdown Tahun akan diisi secara dinamis -->
+            </select>
 
             <div class="overflow-x-auto">
-                <table class="table-auto w-full bg-white rounded-lg shadow-lg">
+                <table class="table-auto w-full bg-white rounded-lg shadow-lg mt-4">
                     <thead class="bg-blue-600 text-white">
                         <tr>
                             <th class="px-6 py-3 text-left">Tahun</th>
@@ -48,11 +38,33 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Form untuk update data -->
+            <h2 class="text-lg font-semibold mt-6">Form Update Data</h2>
+            <form id="form-update" class="mt-4">
+                <div class="mb-4">
+                    <label for="tahun" class="block text-sm font-medium text-gray-700">Tahun</label>
+                    <input type="number" id="tahun" name="tahun" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama Pelatihan</label>
+                    <input type="text" id="nama" name="nama" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal</label>
+                    <input type="date" id="tanggal" name="tanggal" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="foto" class="block text-sm font-medium text-gray-700">URL Foto</label>
+                    <input type="text" id="foto" name="foto" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md mt-4">Update Data</button>
+            </form>
         </section>
     </main>
 
     <footer class="bg-blue-600 text-white p-4 text-center">
-        &copy; 2024. Aplikasi Update & Delete Histori Pelatihan Guru Penggerak.
+        &copy; 2024. Aplikasi Histori Pelatihan Guru Penggerak.
     </footer>
 
     <script src="update-delete.js"></script>

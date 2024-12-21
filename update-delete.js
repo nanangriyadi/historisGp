@@ -51,6 +51,7 @@ function editPelatihan(id) {
     document.getElementById("tahun-update").value = pelatihan.tahun;
     document.getElementById("nama-update").value = pelatihan.nama;
     document.getElementById("tanggal-update").value = pelatihan.tanggal;
+    document.getElementById("foto-update").value = pelatihan.foto;
 
     const form = document.getElementById("update-form");
     form.onsubmit = (event) => {
@@ -58,6 +59,7 @@ function editPelatihan(id) {
         pelatihan.tahun = document.getElementById("tahun-update").value;
         pelatihan.nama = document.getElementById("nama-update").value;
         pelatihan.tanggal = document.getElementById("tanggal-update").value;
+        pelatihan.foto = document.getElementById("foto-update").value;
         
         tampilkanHistori();  // Update tabel setelah edit
         form.reset();  // Reset form

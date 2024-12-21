@@ -71,26 +71,67 @@ function isiDropdownTahun() {
     });
 }
 
+// Fungsi untuk menambah data pelatihan baru
+document.getElementById("form-tambah").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const tahunTambah = document.getElementById("tahun-tambah").value;
+    const namaTambah = document.getElementById("nama-tambah").value;
+    const tanggalTambah = document.getElementById("tanggal-tambah").value;
+    const fotoTambah = document.getElementById("foto-tambah").value;
+
+    // Menambah data pelatihan baru ke array historiPelatihan
+    const newId = historiPelatihan.length + 1;
+    historiPelatihan.push({
+        id: newId,
+        tahun: parseInt(tahunTambah),
+        nama: namaTambah,
+        tanggal: tanggalTambah,
+        foto: fotoTambah
+    });
+
+    // Reset form dan tampilkan data terbaru
+    document.getElementById("form-tambah").reset();
+    tampilkanHistori();
+});
+
 // Fungsi untuk mengedit data pelatihan
 function editData(id) {
     const pelatihan = historiPelatihan.find(p => p.id === id);
-    document.getElementById('tahun').value = pelatihan.tahun;
-    document.getElementById('nama').value = pelatihan.nama;
-    document.getElementById('tanggal').value = pelatihan.tanggal;
-    document.getElementById('foto').value = pelatihan.foto;
+
+    if (pelatihan) {
+        // Isi form update dengan data pelatihan yang dipilih
+        document.getElementById("tahun").value = pelatihan.tahun;
+        document.getElementById("nama").value = pelatihan.nama;
+        document.getElementById("tanggal").value = pelatihan.tanggal;
+        document.getElementById("foto").value = pelatihan.foto;
+
+        // Update data pelatihan saat form disubmit
+        document.getElementById("form-update").onsubmit = function(event) {
+            event.preventDefault();
+
+            pelatihan.tahun = parseInt(document.getElementById("tahun").value);
+            pelatihan.nama = document.getElementById("nama").value;
+            pelatihan.tanggal = document.getElementById("tanggal").value;
+            pelatihan.foto = document.getElementById("foto").value;
+
+            // Reset form dan tampilkan data terbaru
+            document.getElementById("form-update").reset();
+            tampilkanHistori();
+        };
+    }
 }
 
 // Fungsi untuk menghapus data pelatihan
 function hapusData(id) {
     const index = historiPelatihan.findIndex(p => p.id === id);
+
     if (index !== -1) {
-        historiPelatihan.splice(index, 1);
-        tampilkanHistori();
+        historiPelatihan.splice(index, 1);  // Hapus data dari array
+        tampilkanHistori();  // Tampilkan data terbaru setelah dihapus
     }
 }
 
-// Menampilkan histori pelatihan saat halaman dimuat
-window.onload = () => {
-    isiDropdownTahun();
-    tampilkanHistori();  // Menampilkan seluruh data jika tahun tidak dipilih
-};
+// Inisialisasi halaman
+isiDropdownTahun();
+tampilkanHistori();

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update & Delete Histori Pelatihan Guru Penggerak</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+    <header class="bg-blue-600 text-white p-4 text-center md:flex md:justify-between md:items-center">
+        <h1 class="text-2xl font-semibold">Update & Delete Histori Pelatihan Guru Penggerak</h1>
+    </header>
+
+    <main class="container mx-auto p-6 lg:p-8">
+        <section id="update-delete" class="mt-6">
+            <h2 class="text-xl font-bold mb-4">Update dan Delete Data Pelatihan</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="table-auto w-full bg-white rounded-lg shadow-lg">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left">Tahun</th>
+                            <th class="px-6 py-3 text-left">Dokumentasi</th>
+                            <th class="px-6 py-3 text-left">Nama Pelatihan</th>
+                            <th class="px-6 py-3 text-left">Tanggal</th>
+                            <th class="px-6 py-3 text-left">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="histori-tbody">
+                        <!-- Data histori pelatihan akan ditampilkan di sini -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Form Update -->
+        <section id="form-update" class="mt-8">
+            <h2 class="text-xl font-bold mb-4">Form Update Pelatihan</h2>
+            <form id="update-form" class="bg-white p-6 rounded-lg shadow-md">
+                <label for="tahun-update" class="block text-sm font-medium text-gray-700">Tahun</label>
+                <input type="number" id="tahun-update" name="tahun-update" class="block w-full bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm" required>
+
+                <label for="nama-update" class="block text-sm font-medium text-gray-700">Nama Pelatihan</label>
+                <input type="text" id="nama-update" name="nama-update" class="block w-full bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm" required>
+
+                <label for="tanggal-update" class="block text-sm font-medium text-gray-700">Tanggal</label>
+                <input type="date" id="tanggal-update" name="tanggal-update" class="block w-full bg-gray-100 text-gray-800 py-2 pl-3 pr-10 mb-4 rounded-md shadow-sm" required>
+
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md">Update Pelatihan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 text-center">
+        &copy; 2024. Aplikasi Update & Delete Histori Pelatihan Guru Penggerak.
+    </footer>
+
+    <script src="update-delete.js"></script>
+</body>
+</html>

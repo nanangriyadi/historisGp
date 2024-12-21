@@ -14,7 +14,7 @@
 
     <main class="container mx-auto p-6 lg:p-8">
         <section id="update-delete">
-            <h2 class="text-xl font-bold mb-4">Form Update & Delete Pelatihan</h2>
+            <h2 class="text-xl font-bold mb-4">Form Update, Delete & Tambah Data Pelatihan</h2>
             
             <!-- Dropdown untuk memilih tahun -->
             <label for="tahun-select" class="block text-sm font-medium text-gray-700 mb-2">Pilih Tahun</label>
@@ -59,6 +59,28 @@
                     <input type="text" id="foto" name="foto" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
                 </div>
                 <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md mt-4">Update Data</button>
+            </form>
+
+            <!-- Form untuk menambah data baru -->
+            <h2 class="text-lg font-semibold mt-6">Form Tambah Data Pelatihan Baru</h2>
+            <form id="form-tambah" class="mt-4">
+                <div class="mb-4">
+                    <label for="tahun-tambah" class="block text-sm font-medium text-gray-700">Tahun</label>
+                    <input type="number" id="tahun-tambah" name="tahun-tambah" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="nama-tambah" class="block text-sm font-medium text-gray-700">Nama Pelatihan</label>
+                    <input type="text" id="nama-tambah" name="nama-tambah" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="tanggal-tambah" class="block text-sm font-medium text-gray-700">Tanggal</label>
+                    <input type="date" id="tanggal-tambah" name="tanggal-tambah" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="foto-tambah" class="block text-sm font-medium text-gray-700">URL Foto</label>
+                    <input type="text" id="foto-tambah" name="foto-tambah" class="w-full px-4 py-2 bg-gray-100 rounded-md shadow-sm" required>
+                </div>
+                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md mt-4">Tambah Data Baru</button>
             </form>
         </section>
     </main>
